@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>加拿大28预测 · 资料索引与场景导航</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fce9d2 0%, #f5d6b8 55%, #f0c8a2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+      color: #2b241f;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 24px 40px;
+      flex: 1;
+    }
+
+    /* 顶部导航 */
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0 10px;
+      border-bottom: 1px solid rgba(160, 110, 70, 0.25);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-logo {
+      font-weight: 650;
+      font-size: 1.6rem;
+      letter-spacing: -0.3px;
+      color: #693f26;
+      background: rgba(255, 245, 230, 0.7);
+      padding: 0 12px 0 10px;
+      border-radius: 30px;
+      line-height: 2.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #4c3324;
+      padding: 6px 16px;
+      border-radius: 30px;
+      background: rgba(255, 248, 238, 0.5);
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      background: #efdac8;
+      color: #2d1e16;
+    }
+
+    /* hero 简约卡片 */
+    .hero-card {
+      margin-top: 30px;
+      background: #fffcf8;
+      border-radius: 40px;
+      padding: 40px 38px 34px;
+      box-shadow: 0 12px 28px -10px rgba(110, 70, 40, 0.25);
+      backdrop-filter: blur(2px);
+    }
+
+    .hero-title {
+      font-size: 2.1rem;
+      font-weight: 650;
+      color: #4b2d1b;
+      letter-spacing: -0.2px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero-sub {
+      font-size: 1.08rem;
+      color: #4b3525;
+      max-width: 700px;
+      margin-bottom: 18px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px 40px;
+      margin-top: 10px;
+      padding-top: 14px;
+      border-top: 1px dashed #dcc1ab;
+    }
+
+    .hero-meta span {
+      font-size: 0.95rem;
+      background: #f3e4d6;
+      padding: 2px 16px;
+      border-radius: 40px;
+      color: #3f2a1c;
+    }
+
+    /* 内容卡片通用 */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 46px 0 12px 0;
+      color: #482f1f;
+      padding-left: 6px;
+      letter-spacing: -0.2px;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: "▍";
+      color: #b0774a;
+      font-weight: 300;
+      margin-right: 6px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin: 14px 0 20px;
+    }
+
+    .scene-card {
+      background: #fffcf8;
+      border-radius: 32px;
+      padding: 28px 24px 26px;
+      box-shadow: 0 6px 16px rgba(100, 65, 35, 0.12);
+      transition: transform 0.1s;
+    }
+
+    .scene-card h3 {
+      font-size: 1.25rem;
+      font-weight: 620;
+      color: #5c3b27;
+      margin-bottom: 8px;
+    }
+
+    .scene-card p {
+      color: #3e2c20;
+      font-size: 0.98rem;
+    }
+
+    .freq-block {
+      background: #fffcf8;
+      border-radius: 32px;
+      padding: 28px 32px 32px;
+      box-shadow: 0 6px 16px rgba(100, 65, 35, 0.12);
+      margin: 30px 0 12px;
+    }
+
+    .freq-item {
+      padding: 14px 0 10px;
+      border-bottom: 1px solid #eddccc;
+    }
+
+    .freq-item:last-child {
+      border: none;
+    }
+
+    .freq-q {
+      font-weight: 620;
+      color: #552f1a;
+      font-size: 1.05rem;
+    }
+
+    .freq-a {
+      margin-top: 6px;
+      color: #3f2b1d;
+      font-size: 0.96rem;
+    }
+
+    .notice-line {
+      background: #f1e2d3;
+      border-radius: 60px;
+      padding: 12px 24px;
+      margin: 40px 0 20px;
+      color: #3f281b;
+      font-size: 0.95rem;
+      display: inline-block;
+    }
+
+    .inline-link {
+      color: #874f27;
+      font-weight: 550;
+      text-decoration: none;
+      border-bottom: 1px solid #d6b397;
+      transition: 0.15s;
+    }
+
+    .inline-link:hover {
+      color: #572f15;
+      border-bottom-color: #572f15;
+    }
+
+    .footer-note {
+      margin-top: 50px;
+      padding: 16px 0 8px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #5a4130;
+      border-top: 1px solid #d6b8a0;
+    }
+
+    .footer-note a {
+      color: #5f3921;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 12px 16px 30px; }
+      .hero-card { padding: 28px 20px; }
+      .hero-title { font-size: 1.7rem; }
+      .nav-links { gap: 10px; }
+      .nav-links a { padding: 5px 12px; font-size: 0.85rem; }
+      .freq-block { padding: 22px 18px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 导航 -->
+  <header class="nav-bar">
+    <div class="nav-logo">📊 索引盒</div>
+    <div class="nav-links">
+      <a href="#">资料整理</a>
+      <a href="#">场景</a>
+      <a href="#">说明</a>
+    </div>
+  </header>
+
+  <!-- hero 卡片：切入资料整理视角 -->
+  <div class="hero-card">
+    <div class="hero-title">信息索引 · 加拿大28</div>
+    <div class="hero-sub">
+      从资料整理和场景归类出发，梳理与 <a href="https://official-ca28.com" class="inline-link">加拿大28预测</a> 相关的概念模块、常见应用方向及基础说明。以下内容仅为知识索引，不代表任何倾向性结论。
+    </div>
+    <div class="hero-meta">
+      <span>📂 模块化整理</span>
+      <span>🔖 三个场景分类</span>
+      <span>📋 常见问题摘要</span>
+    </div>
+  </div>
+
+  <!-- 核心介绍：从资料索引角度 -->
+  <div class="section-title">为什么需要资料索引</div>
+  <div style="background: #fffcf8; border-radius: 28px; padding: 24px 30px; box-shadow: 0 4px 12px rgba(100,65,35,0.08);">
+    <p style="margin-bottom: 10px;">
+      当接触一个信息领域时，碎片化阅读往往带来理解偏差。将分散的内容按主题、应用层和常见疑问重新编排，能帮助快速建立框架。本页围绕<strong>加拿大28预测</strong>这一关键词，从资料整理角度提炼出三个高频应用场景，以及一些基础说明——仅为信息归类参考，不构成任何建议或保证。
+    </p>
+    <p>
+      所有内容均基于公开讨论中的常见概念，不包含内部数据或特殊渠道信息。若希望进一步浏览数据或走势参考，可将 <a href="https://official-ca28.com" class="inline-link">加拿大28预测</a> 作为其中的一个信息来源。
+    </p>
+  </div>
+
+  <!-- 三个场景模块 -->
+  <div class="section-title">三个常见应用场景</div>
+  <div class="card-grid">
+    <div class="scene-card">
+      <h3>📋 趋势对照</h3>
+      <p>通过历史区间波动与概率分布的对比，整理不同时间跨度的统计特征。适用于学习数据归纳方法，而非决策依据。</p>
+    </div>
+    <div class="scene-card">
+      <h3>📚 概念梳理</h3>
+      <p>从术语、周期、常见算法三个子项入手，将社区讨论中频繁出现的概念按逻辑层级分类，便于快速回溯。</p>
+    </div>
+    <div class="scene-card">
+      <h3>🧩 模式观察</h3>
+      <p>记录特定周期内数字出现频率的分布形态，仅供信息归纳使用。所有模式均基于公开历史数据，不具预测效力。</p>
+    </div>
+  </div>
+
+  <!-- 常见说明 (FAQ 摘要风格) -->
+  <div class="section-title">常见说明摘要</div>
+  <div class="freq-block">
+    <div class="freq-item">
+      <div class="freq-q">❓ 这些场景分类有预测作用吗？</div>
+      <div class="freq-a">没有。分类只为了信息整理，帮助有需求的读者快速定位相关概念。所有涉及走势或频率的内容均为历史统计呈现。</div>
+    </div>
+    <div class="freq-item">
+      <div class="freq-q">❓ 资料来源于哪里？</div>
+      <div class="freq-a">主要基于公开讨论中常见的术语与分类逻辑，并做结构化梳理。具体数字与周期可参考 <a href="https://official-ca28.com" class="inline-link">加拿大28预测</a> 上提供的历史数据。</div>
+    </div>
+    <div class="freq-item">
+      <div class="freq-q">❓ 信息索引适合什么人使用？</div>
+      <div class="freq-a">适合希望系统性了解相关概念、减少重复搜索的读者。本页不包含任何投资或行为引导内容。</div>
+    </div>
+    <div class="freq-item">
+      <div class="freq-q">❓ 页面会更新吗？</div>
+      <div class="freq-a">本页为静态索引展示，不动态更新。具体实时数据请通过其他渠道查询。</div>
+    </div>
+  </div>
+
+  <!-- 补充提示 -->
+  <div class="notice-line">
+    ⚠️ 信息整理视角 · 非专业建议 · 请理性判断
+  </div>
+
+  <!-- footer -->
+  <div class="footer-note">
+    资料索引 · 信息模块化 · 内容仅供学习参考 ｜ 更多数据可浏览 
+    <a href="https://official-ca28.com">加拿大28预测</a>
+  </div>
+
+</div>
+</body>
+</html>
